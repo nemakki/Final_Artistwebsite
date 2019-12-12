@@ -2,7 +2,7 @@
     --font-color: #474747;
     --bg-color: #fffaf7;
     --button-font-color:#383838;
-    --button-bg-color:245, 208, 208;
+    --button-bg-color:240, 164, 156;
     --sidebar-font-color:#a6a6a6;
 }
 
@@ -16,17 +16,21 @@
 
 *{
     background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
 }
 
 .sidebar{
+    /* display: block; */
     width: 5vw;
     height: 5vw;
     position: fixed;
-    z-index: 999; 
+    z-index: 20; 
     top: 0; 
     left: 0;
-    background-color: var(--bg-color);
+    background-color: transparent;
     overflow-x: hidden;
+    overflow-y: scroll;
     padding-top: 20px;
     transition: 0.5s ease-in-out;
 }
@@ -43,10 +47,12 @@
     font-variant: normal; 
     font-weight: 100; 
     line-height: 25px;
+    overflow: scroll;
 }
 
 .sidebar a:hover {
     color: #f1f1f1;
+    transition: background-color 0s ease-in-out;
   }
 
 #home{
@@ -69,15 +75,19 @@
     font-weight: 100; 
     line-height: 28px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .digitalheader{
     display: block;
+    position: relative;
+    top: 20vh;
     margin-left: auto;
     margin-right: auto;
     width: 20%;
     height: auto;
-    opacity: 0.7;
+    opacity: 0;
 }
 
 .digital1{
@@ -100,7 +110,7 @@
     width: 50px;
     line-height: 50px;
     overflow: hidden;
-    z-index: 999;
+    z-index: 25;
     display: none;
     cursor: pointer;
     position: fixed;
@@ -123,12 +133,13 @@
 .backtohome {
     width: 50px;
     height: 50px;
-    z-index: 999;
+    z-index: 30;
     cursor: pointer;
     position: fixed;
     bottom: 20vh;
     right: 2vw;
-    background-color: rgba(var(--button-bg-color),0);
+    /* background-color: rgba(var(--button-bg-color),0); */
+    background-color: rgba(0, 0, 0, 0);
     color: var(--button-font-color);
     opacity:0.5;
     text-align: center;
@@ -136,6 +147,7 @@
     line-height: 25px;
     transition: background-color 1s ease-out, color 1s ease-out;
 }
+
 .backtohome:hover {
     /* transition: background-color 2s ease-out; */
     background-color: rgba(var(--button-bg-color),0.7);
@@ -143,22 +155,35 @@
     
 }
 
+/* ????? */
+
+.homebutton{
+    text-decoration: none;
+    color: var(--button-font-color);
+    background: none;
+    transition: background-color 1s ease-out, color 1s ease-out;
+}
+
+.homebutton:hover{
+    color:white;
+}
+
 
 .lightdark{
-    display:flex;
+    display:fixed;
     position: absolute;
     width: 50px;
     height: 50px;
     top: 5vh;
-    left: 95vw;
+    right: 5vw;
     background-color: var(--button-font-color);
-    z-index:99;
+    z-index:10;
     border-radius: 50px;
     text-align: center;
 }
 
 .lightdark1{
-    z-index: 100;
+    z-index: 11;
     position: relative;
     font-size: 40px;
     text-decoration: none;
@@ -169,7 +194,7 @@
 }
 
 .modeswitch{
-    z-index: 999;
+    z-index: 12;
     display: inline-block;
     height: 50px;
     position: absolute;
@@ -181,4 +206,110 @@
 
 .modeswitch input{
     display: none;
+}
+
+.footer{
+
+    background-image: url("../image/footer1.png");
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 40%;
+    width: 100vw;
+    height: 30vh;
+    opacity: 0.7;
+}
+
+.header{
+    position: absolute;
+    /* display: block; */
+    background-color:#0B0B0B;
+    margin: auto;
+    width: 7vw;
+    height: 7vw;
+    top: 5vh;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 100%;
+    z-index: 100;
+    /* transition: width 1s, height 1s, top 1s; */
+    /* animation: pageChange 1s; */
+}
+
+/* make sure to hide all buttons on the screen */
+
+.header.animated{
+    animation: pageChange 1.1s;
+}
+
+@keyframes pageChange {
+    from {width:7vw; height: 7vw; top: 5vh;}
+    to {width: 200vw; height: 200vh; top: -20vh;}
+}
+
+
+/* dsfjakfds*/
+
+/* .header:hover{
+    cursor: pointer;
+    top: -20vh;
+    width: 200vw;
+    height: 200vh;
+    border-radius: 100%;
+} */
+
+/* .header:hover .headerimg {
+    opacity: 0;
+    bottom: -7vh;
+} */
+
+.headerimg{
+    background-image: url("../image/icon.jpg");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 100%;
+    z-index: 101;
+}
+
+.headerimg.animated{
+    animation: headerimgMove 1s;
+}
+
+@keyframes headerimgMove{
+    from {top: 0vh;}
+    to {top: 100vh;}
+}
+
+/* .headerimg:hover{
+    opacity: 0;
+} */
+
+.menn{
+    display:block;
+    position: absolute;
+    /* background-color: #383838; */
+    background-color: transparent;
+    left:42vw;
+    top:17vh;
+    width:5vw;
+    height:5vw;
+    font-size: 20px;
+}
+
+.zai{
+    display:block;
+    position: absolute;
+    /* background-color: #383838; */
+    background-color: transparent;
+    left:53vw;
+    top:17vh;
+    width:5vw;
+    height:5vw;
+    font-size: 20px;
 }

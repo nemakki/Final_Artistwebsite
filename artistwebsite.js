@@ -1,7 +1,7 @@
 var body = document.querySelector("body");
-var pageLinkList = ["https://google.com", "dougrosman.com", "crouton.net"];
-var investigated = false;
-var cyclePages = false;
+// var pageLinkList = ["https://google.com", "dougrosman.com", "crouton.net"];
+// var investigated = false;
+// var cyclePages = false;
 
     // var pageLinkList = [
     //     [65, "google.com"],
@@ -9,48 +9,44 @@ var cyclePages = false;
     //     ["crouton.net"];
 
 
-body.addEventListener("keydown", function(e) {
+// body.addEventListener("keydown", function(e) {
 
 
         // load the page based on the URL
         // ?
 
-        let myURL = pageLinkList[e.keyCode-90];
+        // let myURL = pageLinkList[e.keyCode-90];
 
     // if nothing has been investigated, isInvestigated is false;
-    if(cyclePages && e.keyCode === 90){
 
-        window.location.href=myURL;
+    // document.body.addEventListener("keydown", myFunction);
+    // function myFunction(){
+    // if( e.keyCode === 65){
 
-    }
+    //     window.location.href="google.com";
 
-    if(!investigated && e.keyCode === 90){
+    // }}
 
-        cyclePages = true;
-        investigated = !investigated;
-        console.log("i have just been investigated");
+    // if(!investigated && e.keyCode === 90){
 
-    }
+    //     cyclePages = true;
+    //     investigated = !investigated;
+    //     console.log("i have just been investigated");
+
+    // }
+
 
     
   
 
-    console.log("");
-        // if(isInvestigated && e.keyCode == 65)
+
+        // if(e.keyCode === 65)
         // {
-        //     window.location.href = myURL;
+        //     window.location.href = "google.com";
         // }
+
+
         
-        // if(isInvestigated == false)
-        // {
-        //     // pop a window out
-        //     isInvestigated = !isInvestigated;
-        //     console.log("i've just been investigated!");
-        // }
-
-        /////
-
-});
 
 
 
@@ -58,14 +54,38 @@ body.addEventListener("keydown", function(e) {
 
 
 
-// function keyCode(event) {
+//      $(document).on('keydown',function keyCode(event) {
 //     var x = event.keyCode;
 //     if (x == 65) {
-//       window.location.href="https://github.com/nemakki/gametest";
+//       window.location.href="https://google.com";
 //     }
-//   }
+//   });
 
-//   $(document).keydown(function(e){
-//     if (e.keyCode==65)
-//         $("body").append("<p>ctrl+z detected!</p>");
-//     });
+  $(document).keydown(function(e){
+    if (e.keyCode==65)
+        window.location.href="front.html";
+    });
+
+    $(document).keydown(function(e){
+        if (e.keyCode==66)
+            window.location.href="mainsite.html";
+        });
+
+        $(document).keydown(function(e){
+            if (e.keyCode==67)
+                window.location.href="artistwebsite.html";
+            });
+// document.addEventListener("keydown", function (event) {
+
+//     var handled = false;
+//     if (event.key !== undefined) {
+//       // Handle the event with KeyboardEvent.key and set handled true.
+//     } else if (event.keyCode !== undefined) {
+//       // Handle the event with KeyboardEvent.keyCode and set handled true.
+//     }
+  
+//     if (handled) {
+//       // Suppress "double action" if event handled
+//       event.preventDefault();
+//     }
+//   }, true);

@@ -1,0 +1,61 @@
+
+/* #room {
+    position:relative;
+    left:25vw;
+    width:40%;
+    filter:grayscale(1);
+  } */
+body{
+    background-color: #363636;
+}
+.container {
+    position: relative;
+    margin:auto;
+    max-width: 50%;
+    height:auto;
+    transition: 1s ease;
+}
+
+.room {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 2s ease;
+    background-color:#363636; 
+ }
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.container:hover {
+    opacity: 1;
+    filter:grayscale(1);
+}
+/* 
+.container:hover .text {
+    filter: none;
+    opacity: 1;
+    background-color: purple;
+} */
+
+.overlay:hover{
+    opacity:0.8;
+}
